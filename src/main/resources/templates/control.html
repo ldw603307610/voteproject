@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理项目</title>
+</head>
+<style>
+    .b01{
+        background: url("../static/newpic04.png")no-repeat fixed;
+        background-size: 100% 100%;
+    }
+    html,body{
+        width:100%;
+        height:100%;
+    }
+</style>
+<body style="margin-left: 500px;margin-top: 200px;" class="b01">
+<h1 style="color:lightcoral">欢迎来到管理项目页面</h1>
+<h1 style="color: red" th:text="${msg}"></h1>
+<p style="color: orangered" th:text="${wrong02}" th:if="${!#strings.isEmpty(wrong02)}"></p>
+<form th:action="@{/user/order}" style="color: dodgerblue;width: 200px">
+    <button type="submit" style="color: lightsalmon">结束本轮并查看结果</button>
+</form>
+<form th:action="@{/user/delete}" style="margin-top: 20px">
+    <button type="submit" style="color: lightsalmon;width: 200px">点击删除项目以及其相关数据</button>
+</form>
+<form th:action="@{/user/backtolast}" style="margin-top: 20px">
+    <button type="submit" style="color: lightsalmon;width: 200px">返回</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .p{
+        background: url("../static/pic05.jpg");
+        background-size: 100% 100%;
+    }
+    html,body{
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<body style="margin-left: 500px;margin-top: 200px" class="p">
+<form th:action="@{/user/judgecreate}">
+    <p style="color: red">评委用户名:</p><input type="text" name="judgename" placeholder="请输入评委的用户名">
+    <p style="color: red">评委密码:</p><input type="text" name="judgepassword" placeholder="请输入评委的密码">
+    <button type="submit" style="color: red;margin-left: auto;text-align: center;width: 200px">创建评委完成</button>
+</form>
+<form th:action="@{/user/jumptojudgelogin}">
+    <button type="submit"  style="color: lightcoral;margin-left: auto;text-align: center;width: 200px">点击跳转至评委登录页面</button>
+</form>
+<form th:action="@{/user/jumptocreate}">
+    <button type="submit" style="color: red;margin-left: auto;text-align: center;width: 200px">返回</button>
+</form>
+<p th:text="${msg}" th:if="${! #strings.isEmpty(msg)}" style="color: red"></p>
+<p th:text="${msg02}" th:if="${! #strings.isEmpty(msg02)}" style="color: red"></p>
+</body>
+</html>

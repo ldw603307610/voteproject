@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>评委登录</title>
+</head>
+<style>
+    .b{
+        background: url("../static/pic06.jpg")no-repeat fixed;
+        background-size: 100% 100%;
+    }
+    html,body{
+        width:100%;
+        height:100%;
+    }
+</style>
+<body class="b" style="margin-left: 400px;margin-top: 200px">
+<h1 th:text="${msg}" th:if="${!#strings.isEmpty(msg)}" style="color: orangered"></h1>
+<h1 th:text="${wrongmess}" th:if="${!#strings.isEmpty(wrongmess)}" style="color: orangered"></h1>
+<form th:action="@{/user/judgelogin}" >
+    <input type="text" name="judgeusername" placeholder="用户名" >
+    <input type="text" name="judgepassword" placeholder="密码">
+    <input type="text" name="projectid" placeholder="项目id">
+    <button type="submit" style="color: red;margin-left: auto;text-align: center;width: 200px">登录</button>
+</form>
+<form th:action="@{/user/jumpbacktoindex}">
+    <button type="submit" style="color: red;width: 200px;margin-top:25px">点击回到登录界面</button>
+</form>
+</body>
+</html>

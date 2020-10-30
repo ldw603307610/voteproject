@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>投票结果显示</title>
+</head>
+<style>
+    .lastimg{
+        background: url("../static/newpic04.png");
+        background-size: 100% 100%;
+    }
+    html,body{
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<body class="lastimg">
+    <h1 th:text="${msg}" style="margin-left: 400px;margin-top: 300px;color: red"></h1>
+    <form th:action="@{/user/jumpbacktoindex}">
+        <button type="submit" style="color: red;margin-left: 500px;width: 200px">返回登录界面</button>
+    </form>
+</body>
+</html>

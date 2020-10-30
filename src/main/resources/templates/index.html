@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<style>
+    .backgoundimg{
+        background: url("../static/newpic02.jpg")no-repeat fixed;
+        background-size: 100% 100%;
+    }
+    html,body{
+        width:100%;
+        height:100%;
+    }
+</style>
+<body class="backgoundimg" >
+<h1 style="color:dodgerblue;margin-left: 600px;margin-top: 3cm">欢迎来到登录界面</h1>
+<div style="margin-left: 550px;margin-top: 150px">
+    <form th:action="@{/user/index}">
+        <p style="color: red" th:text="${msg}" th:if="${! #strings.isEmpty(msg)}"></p>
+    用户名:<input type="text"  name="username" placeholder="请输入用户名" style="margin-left: auto;text-align: center;">
+        <div style="word-break: break-all"></div>
+    密码为:<input type="text"  name="password" placeholder="请输入密码" style="margin-left: auto;text-align: center;margin-top: 15px">
+    <p style="color: red">输入完后请点击登录</p>
+    <button type="submit" style="color: red;margin-left: auto;text-align: center;width: 200px" >登录</button>
+</form>
+    <form th:action="@{/user/jumptoregister}">
+        <button type="submit" style="color: red;width: 200px;margin-top: 25px">注册</button>
+    </form>
+    <form th:action="@{/user/jumptojudgelogin}">
+        <button type="submit" style="color: red;width: 200px;margin-top: 25px">点击跳转至评委登录页面</button>
+    </form>
+</div>
+
+</body>
+</html>

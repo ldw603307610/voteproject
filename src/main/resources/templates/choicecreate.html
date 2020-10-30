@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .p03{
+        background: url("../static/pic05.jpg");
+        background-size: 100% 100%;
+    }
+    html,body{
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<body style="margin-left: 500px;margin-top: 200px" class="p03">
+<form th:action="@{/user/createchoice}">
+    <p style="color:red;margin-bottom: 5px">建议选项至少应该和轮数一样多</p>
+    <div style="word-break: break-all"></div>
+    <p style="color: lightpink">选项的内容：</p><input type="text" name="choicename" placeholder="请输入选项的内容">
+    <button type="submit" style="color: red;margin-left: auto;text-align: center;width: 200px">创建选项完成</button>
+</form>
+<p th:text="${msg}" th:if="${!#strings.isEmpty(msg)}"style="color: red"></p>
+<p th:text="${msg02}" th:if="${!#strings.isEmpty(msg02)}"style="color: red"></p>
+<form th:action="@{/user/jumptocreate}">
+    <button type="submit" style="color: red;margin-left: auto;text-align: center;width: 200px">返回</button>
+</form>
+</body>
+</html>

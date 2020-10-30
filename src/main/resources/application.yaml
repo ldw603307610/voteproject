@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 3268406
+#加这个UTF-8是为了能够统一字符，支持中文什么之类的,系统不会报错的.对于第四行，用这个有cj的更好，系统强烈推荐的。
+  resources:
+    static-locations: classpath:/
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+  #自动更新表，每次重启都会刷新所有的表。
+  mail:
+    password: oxokwdheetzlbifj
+    host: smtp.qq.com
+    username: 212367051@qq.com
+    default-encoding: UTF-8
+    from: 212367051@qq.com
+mail:
+  sendText: "OK"
