@@ -12,11 +12,3 @@ spring:
     hibernate:
       ddl-auto: create
   #自动更新表，每次重启都会刷新所有的表。
-  mail:
-    password: oxokwdheetzlbifj
-    host: smtp.qq.com
-    username: 212367051@qq.com
-    default-encoding: UTF-8
-    from: 212367051@qq.com
-mail:
-  sendText: "OK"
